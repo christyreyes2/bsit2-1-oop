@@ -1,19 +1,23 @@
 public class Main {
     public static void main(String[] args) {
-        Book book1 = new Book("Harry Potter", "J.K Rowling", 400);
-        Book book2 = new Book("Hamilton the Revolution", "Hamilton", 505);
-        Book book3 = new Book("Epic The Musical", "Epic", 4822);
-        book1.displayInfo();
-        book1.borrowBook();
-        book1.returnBook();
+        Student student1 = new Student("Alice", 20, "BSIT", 86.3, 87.0, 89);
+        Student student2 = new Student("Bob", 19, "BSCS",98, 79, 87);
+        Student student3 = new Student("Charlie", 21, "BSIT", 68, 89, 88);
 
-        book2.displayInfo();
-        book2.borrowBook();
-        book2.returnBook();
+        student1.displayinfo();
+        student1.calculateAverage();
+        student1.getLetterGrade();
+        student1.isPassing();
 
-        book3.displayInfo();
-        book3.borrowBook();
-        book3.returnBook();
+        student2.displayinfo();
+        student2.calculateAverage();
+        student2.getLetterGrade();
+        student2.isPassing();
+
+        student3.displayinfo();
+        student3.calculateAverage();
+        student3.getLetterGrade();
+        student3.isPassing();
 
     }
 }
