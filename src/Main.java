@@ -1,56 +1,25 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("═══ Book Record System ═══\n");
+        System.out.println("=== EMPLOYEE MANAGEMENT SYSTEM ===\n");
 
-        System.out.println("Adding books and ratings...");
+        //creating different employee details
+        Manager manager = new Manager("Alice Smith", 2001, 80000, "Engineering", 15000, 8);
+        Developer developer = new Developer("Bob Johnson", 2002, 70000, "Engineering", "Java", 5);
+        Intern intern = new Intern("Charlie Brown", 2003, 30000, "Engineering", "Tech University", true);
 
-        Book b1 = new Book("Java Programming", "John Smith");
-        try {
-            b1.addRating(4);
-            System.out.println("Rating 4 added successfully");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
-
-
-        Book b2 = new Book("Data Structures", "Alice Brown");
-        System.out.print("Ratings added: ");
-        int[] ratingsB2 = {5, 4, 3, 5};
-        for (int i = 0; i < ratingsB2.length; i++) {
-            try {
-                b2.addRating(ratingsB2[i]);
-                System.out.print(ratingsB2[i]);
-                if (i < ratingsB2.length - 1) {
-                    System.out.print(", ");
-                }
-            } catch (IllegalArgumentException e) {
-                System.out.println("\nError: " + e.getMessage());
-                break;
-            }
-        }
         System.out.println();
+        manager.displayInfo();
+        manager.work();
+        System.out.println("Monthly Salary: $" + manager.calculateSalary());
 
-        try {
-            b2.addRating(6);
-        } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
+        System.out.println();
+        developer.displayInfo();
+        developer.work();
+        System.out.println("Monthly Salary: $" + developer.calculateSalary());
 
-        Book b3 = new Book("Web Development", "Bob Wilson");
-        b3.addMultipleRatings(3, 4, 4, 2);
-
-        System.out.println("\nBook Results:");
-        System.out.println(b1);
-        System.out.println(b2);
-        System.out.println(b3);
-
-        System.out.println("\nTotal books created: " + Book.getTotalBooks());
-
-        Book highest = b1;
-        if (b2.getAverageRating() > highest.getAverageRating()) highest = b2;
-        if (b3.getAverageRating() > highest.getAverageRating()) highest = b3;
-
-        System.out.println("Highest rated book: " + highest.getTitle() +
-                " by " + highest.getAuthor() + " (" + highest.getAverageRating() + ")");
+        System.out.println();
+        intern.displayInfo();
+        intern.work();
+        System.out.println("Monthly Salary: $" + intern.calculateSalary());
     }
 }
