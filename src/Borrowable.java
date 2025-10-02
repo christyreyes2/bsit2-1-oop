@@ -3,7 +3,7 @@ public interface Borrowable {
     void returnItem();
     boolean isAvailable();
     int getBorrowingPeriod();
-    double calculateLateFee(int daysLate);  // Add this method
+    double calculateLateFee(int daysLate); 
 
     default String getBorrowingStatus() {
         return isAvailable() ? "Available for borrowing" : "Currently borrowed";
